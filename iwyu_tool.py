@@ -212,18 +212,17 @@ def slice_compilation_db(compilation_db, selection):
     if not selection:
         return compilation_db
 
-    # Canonicalize selection paths to match compilation database.
-    selection = [os.path.realpath(p) for p in selection]
-
     new_db = []
-    for path in selection:
-        if not os.path.exists(path):
-            print('WARNING: \'%s\' not found on disk.' % path)
-            continue
+    for pattern in selection:
+        # if not os.path.exists(pattern):
+        #     print('WARNING: \'%s\' not found on disk.' % pattern)
+        #     continue
 
-        matches = [e for e in compilation_db if e['file'].startswith(path)]
+        # matches = [e for e in compilation_db if e['file'].startswith(pattern)]
+        # print(pattern)
+        matches = [e for e in compilation_db if re.match(pattern, e['file'])]
         if not matches:
-            print('WARNING: \'%s\' not found in compilation database.' % path)
+            print('WARNING: \'%s\' not found in compilation database.' % pattern)
             continue
 
         new_db.extend(matches)
