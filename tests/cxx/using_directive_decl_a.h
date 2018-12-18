@@ -1,4 +1,4 @@
-//===--- iwyu_version.h - include-what-you-use versioning -----------------===//
+//===--- using_directive_decl_a.h - test input file for iwyu --------------===//
 //
 //                     The LLVM Compiler Infrastructure
 //
@@ -6,10 +6,4 @@
 // License. See LICENSE.TXT for details.
 //
 //===----------------------------------------------------------------------===//
-
-#ifndef INCLUDE_WHAT_YOU_USE_IWYU_VERSION_H_
-#define INCLUDE_WHAT_YOU_USE_IWYU_VERSION_H_
-
-#define IWYU_VERSION_STRING "0.12"
-
-#endif  // INCLUDE_WHAT_YOU_USE_IWYU_VERSION_H_
+namespace a {};
